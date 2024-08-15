@@ -53,6 +53,7 @@ return isValid;
 }
 
 
+//Gebruik maken van een constante
 
 
 
