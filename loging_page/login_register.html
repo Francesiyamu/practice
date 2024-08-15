@@ -16,31 +16,74 @@
     <a href="">About</a>
     <a href="">Services</a>
     <a href="">Contact</a></li>
-    <button class="login" type="submit">Login</button> 
+    <button class="login_nav" type="submit">Login</button> 
   </nav>
 </header>
 
 <div class="wrapper">
-  <form action="">
-    <h1>Login</h1>
-    <div class="user_input">
-      <input type="email" name="email" id="email">
-      <i class='bx bxs-envelope'></i>
-    </div>
-    <div class="user_input">
-      <input type="password" name="password" id="password">
-      <i class='bx bxs-lock-alt'></i>
-    </div>
-    <div class="remember">
-      <p><input type="checkbox" name="" id=""> Rember me</p>
-      <a href="">Forgot password?</a>
-    </div>
-    <button type="submit">Login</button>
-    <p>Don't have an account? <a href="">Register</a></p>
-  </form>
-</div>
+  <span class="close_icon">
+    <i class='bx bx-x'></i>
+  </span>
+  <div class="form_box login">
+    <form action="">
+      <h1>Login</h1>
+      <div class="user_input">
+        <i class='bx bxs-envelope'></i>
+        <input type="email" name="email" id="email" >
+        <label for="">Email</label>
+      </div>
+      <div class="user_input">
+        <i class='bx bxs-lock-alt'></i>
+        <input type="password" name="password" id="password">
+        <label for="">Password</label>
+      </div>
+      <div class="remember">
+        <label><input type="checkbox" name="" id=""> Remember me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button class="login_btn" type="submit">Login</button>
+      <div class="register">
+        <p >Don't have an account? <a href="#" class="register_link">Register</a></p>
+      </div>
+      
+    </form>
+  </div>  
+
+  <div class="form_box register">
+    <form action="">
+      <h1>Register</h1>
+      <div class="user_input">
+        <i class='bx bx-user' ></i>
+        <input type="email" name="username" id="username" >
+        <label for="username">Username</label>
+      </div>
+      <div class="user_input">
+        <i class='bx bxs-envelope'></i>
+        <input type="email" name="email" id="email" >
+        <label for="email">Email</label>
+      </div>
+      <div class="user_input">
+        <i class='bx bxs-lock-alt'></i>
+        <input type="password" name="password" id="password" >
+        <label for="password">Password</label>
+      </div>
+      <div class="remember">
+        <label><input type="checkbox" name="terms" id="terms"> I agree to the terms & conditions</label>
+      </div>
+      <button class="login_btn" type="submit">Register</button>
+      <div class="register">
+        <p >Already have an account? <a href="" class="login_link">Login</a></p>
+      </div>
+      
+    </form>
+  </div>  
+
+  </div>
+  
 
 
+
+<script src="script.js"></script>
 
 
 </body>
