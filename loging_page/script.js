@@ -25,7 +25,7 @@ closeBtn.addEventListener('click', ()=> {
 
 
 //REGISTER FORM FUNCTIONEEL MAKEN
-
+const form = document.getElementById('registerForm');
 const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const passwordInput =  document.getElementById('password');
@@ -35,16 +35,16 @@ const checkboxInput = document.getElementById('terms');
 function formValidation (){
   let isValid =  true;
 
-  if(usernameInput.input === ''){
+  if(usernameInput.value === ''){
     alert(`Username is required`);
     isValid =  false;
-  } else if (emailInput.value() === ''){
+  } if (emailInput.value === ''){
     alert(`Email is required`);
     isValid = false;
-  } else if (passwordInput.value() === ''){
+  } if (passwordInput.value === ''){
     alert(`Password is required`);
     isValid = false;
-  } else if (!checkboxInput.checked){
+  } if (!checkboxInput.checked){
     alert(`Please agree to the terms & conditions`);
     isValid = false;
   }
@@ -55,7 +55,44 @@ return isValid;
 
 //Gebruik maken van een constante
 
+const API = 'https://jsonplaceholder.typicode.com/posts';
 
+//Event aan een element koppelen
+
+form.addEventListener('submit', async (event) =>{
+  event.preventDefault();
+
+  if(formValidation()){
+    const userInfo = {
+      username: usernameInput.value,
+      email: emailInput.value,
+      password : passwordInput.value
+    };
+
+    // fetch om data op te halen en async & await
+    
+    try{
+      const response = await fetch(API, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(userInfo)
+      });
+      const inputedData = await response.json();
+
+      //JSON manipuleren en weergeven
+      console.log('Registered user:', inputedData);
+      alert(`User ${inputedData.username} sucessfully registered!`);
+
+      //Gebruik van local storage
+      localStorage.setItem('user', JSON.stringify(userInfo));
+
+    } catch(error){
+      console.error('Error:', error);
+    }
+  }
+});
 
 
 
